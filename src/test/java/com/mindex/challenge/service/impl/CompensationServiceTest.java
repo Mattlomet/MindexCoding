@@ -60,6 +60,8 @@ public class CompensationServiceTest {
 
     assertNotNull(createCompensation.getEmployee());
     assertEmployeeEquivalence(testEmployee, createCompensation.getEmployee());
+    assertCompensationEquivalence(compensation, createCompensation);
+
 
     // Read checks
     Compensation compensationFoundByEmployeeId = restTemplate.getForEntity(readUrl, Compensation.class, createCompensation.getEmployee().getEmployeeId()).getBody();
